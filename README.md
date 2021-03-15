@@ -1,1 +1,1 @@
-# instacart
+# Machine Learning Project - Instacart
