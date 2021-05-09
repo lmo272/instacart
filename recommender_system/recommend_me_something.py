@@ -19,6 +19,8 @@ from gensim.models import Word2Vec
 @click.argument('current_basket', nargs=3, type=str)
 def recommend_product(product_count, cluster_number, current_basket):
 
+    click.echo(click.style("Initializing clusters...", fg='blue'))
+
     # Load models
     cluster_item_models = [Word2Vec.load(f"../cluster_models/model_cluster_{id}.model") for id in range(0, 12)]
     model = cluster_item_models[cluster_number-1]
@@ -72,9 +74,15 @@ def recommend_product(product_count, cluster_number, current_basket):
     
     filtered_recommendations = [recommendation for recommendation in recommendations if recommendation not in matches]
 
+    click.clear()
     click.echo(emoji.emojize("Asking the :crystal_ball:...\n"))
-    time.sleep(3)
-    click.echo(emoji.emojize("Recommended Products: :rocket: :rocket:") + str([rec.strip() for rec in filtered_recommendations]))
+    time.sleep(2)
+    click.echo(emoji.emojize("Taming the :dragon: in our servers...\n"))
+    time.sleep(2)
+
+    click.echo(emoji.emojize("Recommended Products: :rocket: :rocket: :rocket:") + str([rec.strip() for rec in filtered_recommendations]) + "\n")
+    click.echo(click.style('Enjoy!', fg='blue'))
+
 
 if __name__ == '__main__':
     recommend_product()
