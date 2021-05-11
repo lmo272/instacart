@@ -16,6 +16,11 @@ Instacart is an American company that operates a grocery delivery and pick-up se
 
 What products the users are more likely to buy?
 
+Recommendation system (Classification tesk)
+do it at user level
+user item pair (aggregate time series)
+Fine tune the model
+
 ## Evalation criteria
 1. Business problem to machine learning problem​
 2. Explorative data analysis for generating features​
